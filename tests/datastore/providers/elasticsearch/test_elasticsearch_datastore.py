@@ -10,9 +10,8 @@ from datastore.providers.elasticsearch_datastore import (
     ElasticsearchDataStore,
 )
 import time
-import os
 
-DIM_SIZE = int(os.environ.get("EMBEDDING_DIMENSION", 256))
+DIM_SIZE = 1536
 
 
 @pytest.fixture

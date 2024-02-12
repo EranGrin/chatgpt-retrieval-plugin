@@ -5,7 +5,6 @@ scripts/
 tests/
 examples/
 local_server/
-assets/
 *.md
 *.pyc
 .dockerignore
