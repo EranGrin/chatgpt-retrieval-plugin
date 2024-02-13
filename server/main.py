@@ -94,9 +94,11 @@ async def query_main(
     request: QueryRequest = Body(...),
 ):
     try:
+        logger.info(f"Request: {request}")
         results = await datastore.query(
             request.queries,
         )
+        logger.info(f"Results: {results}")
         return QueryResponse(results=results)
     except Exception as e:
         logger.error(e)
