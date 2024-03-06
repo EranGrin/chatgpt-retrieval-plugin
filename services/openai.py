@@ -26,7 +26,8 @@ def get_embeddings(texts: List[str]) -> List[List[float]]:
 
     response = {}
     if deployment == None:
-        response = openai.Embedding.create(input=texts, model="text-embedding-ada-002")
+        response = openai.Embedding.create(input=texts, model="text-embedding-3-large")
+        # response = openai.Embedding.create(input=texts, model="text-embedding-ada-002")
     else:
         response = openai.Embedding.create(input=texts, deployment_id=deployment)
 

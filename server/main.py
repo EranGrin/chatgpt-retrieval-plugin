@@ -83,7 +83,9 @@ async def upsert(
         return UpsertResponse(ids=ids)
     except Exception as e:
         logger.error(e)
+        logger.error(f"Error during upsert: {e.__class__.__name__}: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Service Error")
+
 
 
 @app.post(
